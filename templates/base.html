@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Shop {% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        {% block header %}
+        <p>Магазин одежды</p>
+        {% endblock %}
+    </header>
+
+
+    {% block nav %}
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis distinctio quasi eaque alias aliquam consectetur facilis assumenda nemo pariatur sed? Eaque quisquam expedita voluptatibus reprehenderit cum. Dolorem a deserunt nemo?<br>
+
+            <ul >
+                <li>
+                    <a href="{{ url_for('index') }}">Главная</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('footwear') }}">Обувь</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('clothes') }}">Одежда</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('jacket') }}">Куртки</a>
+                </li>
+                
+
+            </ul>
+        </div>
+    </div>
+
+    {% endblock %}
+</nav>
+
+<main>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, eveniet dignissimos? Voluptates reiciendis velit eveniet aperiam. Tempora praesentium repellendus, maxime ad suscipit reiciendis harum ut eligendi debitis rerum adipisci animi.<br>
+    {% block main %}
+    <br>
+    {% for i in content %}
+        <div>
+            Название: {{ i.name }} <br>
+            Цена: {{ i.price }} <br>
+            Описание: {{ i.description }}<br>
+            <br>
+        </div>
+    {% endfor %}
+    {% endblock %}
+</main>
+
+<footer>
+    {% block footer %}
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nulla distinctio tenetur. Similique sequi deserunt debitis. Ea deleniti vero, nobis voluptate vitae ipsa asperiores, expedita repudiandae officiis nihil nesciunt autem.<br>
+
+            Контакты для связи : +7(999)9999999
+        </p>
+    {% endblock %}
+</footer>
+</body>
+
+</html>
